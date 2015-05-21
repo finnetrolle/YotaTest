@@ -2,7 +2,7 @@
  * Created by finnetrolle on 22.05.2015.
  */
 
-var yotaTestApp = angular.module('yotaTestApp', ['ngRoute']);
+var yotaTestApp = angular.module('yotaTestApp', ['ngRoute', 'angularTreeview']);
 
 yotaTestApp.config(function ($routeProvider) {
     $routeProvider

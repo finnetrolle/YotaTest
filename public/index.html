@@ -6,30 +6,14 @@
 
     <script src="https://code.angularjs.org/1.4.0-rc.1/angular.js"></script>
     <script src="https://code.angularjs.org/1.4.0-rc.1/angular-route.js"></script>
+    <script src="js/lib/angular.treeview.min.js"></script>
     <script src="js/yotaTestApp.js"></script>
     <script src="js/controllers/fileUploadControllerCtrl.js"></script>
     <script src="js/controllers/documentController.js"></script>
     <script src="js/controllers/homeController.js"></script>
 
-    <script type="text/javascript" >
-//        function uploadFormData(){
-//            $('#result').html('');
-//            var oMyForm = new FormData();
-//            oMyForm.append("file", file2.files[0]);
-//
-//            $.ajax({
-//                url: '/upload',
-//                data: oMyForm,
-//                dataType: 'text',
-//                processData: false,
-//                contentType: false,
-//                type: 'POST',
-//                success: function(data){
-//                    $('#result').html(data);
-//                }
-//            });
-//        }
-    </script>
+    <link rel="stylesheet" href="css/angular.treeview.css">
+
 </head>
 
 <body ng-app="yotaTestApp">
@@ -41,14 +25,5 @@
 
 <div ng-view></div>
 
-<!--<h1>Document upload</h1>-->
-
-<!--<form id="form2" method="post" action="/upload" enctype="multipart/form-data">-->
-    <!--<input name="file2" id="file2" type="file" /><br/>-->
-<!--</form>-->
-
-<!--<button value="Submit" onclick="uploadFormData()" >Upload</button>-->
-
-<!--<div id="result"></div>-->
 </body>
 </html>
