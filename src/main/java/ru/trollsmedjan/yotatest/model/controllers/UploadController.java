@@ -33,22 +33,32 @@ public class UploadController {
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
-    String upload(MultipartHttpServletRequest request, HttpServletResponse response) {
+    FileUploadInfo upload(MultipartHttpServletRequest request, HttpServletResponse response) {
 
         Iterator<String> iterator =  request.getFileNames();
+        FileUploadInfo fileUploadInfo = new FileUploadInfo();
 
         try {
             xmlParsingService.processUploadedFile(request.getFile(iterator.next()));
         } catch (IOException e) {
-            return "Failed with: " + e.getMessage();
+            fileUploadInfo.errorMessage = "Failed with IOException: " + e.getMessage();
+            return fileUploadInfo;
         } catch (ParserConfigurationException e) {
-            return "Failed with: " + e.getMessage();
+            fileUploadInfo.errorMessage = "Failed with ParserConfigurationException: " + e.getMessage();
+            return fileUploadInfo;
         } catch (SAXException e) {
-            return "Failed with: " + e.getMessage();
+            fileUploadInfo.errorMessage = "Failed with SAXException: " + e.getMessage();
+            return fileUploadInfo;
         }
 
-        return "success";
+        fileUploadInfo.success = true;
+        return fileUploadInfo;
 
+    }
+
+    class FileUploadInfo {
+        public boolean success = false;
+        public String errorMessage;
     }
 
 }
