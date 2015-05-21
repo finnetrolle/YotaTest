@@ -3,9 +3,6 @@ package ru.trollsmedjan.yotatest.model.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Element;
-import ru.trollsmedjan.yotatest.model.PropertyTreeBuilder;
-import ru.trollsmedjan.yotatest.model.dao.DocumentRepository;
-import ru.trollsmedjan.yotatest.model.dao.PropertyRepository;
 import ru.trollsmedjan.yotatest.model.entities.Document;
 import ru.trollsmedjan.yotatest.model.entities.Property;
 
@@ -19,8 +16,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.util.List;
 
 /**
  * Created by finnetrolle on 22.05.2015.

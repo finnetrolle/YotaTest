@@ -32,7 +32,7 @@ public class PropertyTreeBuilderTest extends TestCase {
         document.setName("test document");
         document.setId(1);
 
-        Property property = null;
+        Property property;
         List<Property> roots = new ArrayList<>();
         List<Property> childs = new ArrayList<>();
 
@@ -111,6 +111,5 @@ public class PropertyTreeBuilderTest extends TestCase {
 
         propertyTreeBuilder.fillRootsWithChilds(roots, childs);
 
-        int a = 0;
     }
 }

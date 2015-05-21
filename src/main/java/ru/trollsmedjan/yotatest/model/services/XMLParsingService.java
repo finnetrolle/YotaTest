@@ -14,7 +14,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -41,9 +40,7 @@ public class XMLParsingService {
 
         documentRepository.save(document);
 
-        for (Property property : document.getChilds()) {
-            saveProperties(property);
-        }
+        document.getChilds().forEach(this::saveProperties);
     }
 
     private void saveProperties(Property property) {

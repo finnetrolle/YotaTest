@@ -1,12 +1,10 @@
 package ru.trollsmedjan.yotatest.model.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.trollsmedjan.yotatest.model.entities.Document;
 import ru.trollsmedjan.yotatest.model.entities.Property;
 
-import java.util.Collection;
 import java.util.List;
 
 /**

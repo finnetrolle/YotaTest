@@ -1,15 +1,9 @@
 package ru.trollsmedjan.yotatest.model.helpers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.*;
-import ru.trollsmedjan.yotatest.model.dao.DocumentRepository;
-import ru.trollsmedjan.yotatest.model.dao.PropertyRepository;
 import ru.trollsmedjan.yotatest.model.entities.Document;
 import ru.trollsmedjan.yotatest.model.entities.Property;
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 /**

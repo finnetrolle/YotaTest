@@ -1,6 +1,6 @@
 package ru.trollsmedjan.yotatest.model;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.trollsmedjan.yotatest.model.entities.Property;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * Created by syachin on 21.05.2015.
  */
-@Component
+@Service
 public class PropertyTreeBuilder {
 
     private Map<Long, List<Property>> buildMapByParentId(List<Property> properties) {
