@@ -1,14 +1,12 @@
 package ru.trollsmedjan.yotatest.model.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.xml.sax.SAXException;
 import ru.trollsmedjan.yotatest.model.helpers.ExtendedSAXParser;
+import ru.trollsmedjan.yotatest.model.services.XMLBuildingService;
 import ru.trollsmedjan.yotatest.model.services.XMLParsingService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -23,15 +21,24 @@ import java.util.UUID;
  * Created by finnetrolle on 21.05.2015.
  */
 @RestController
-@RequestMapping("/upload")
-public class UploadController {
+public class FileController {
 
     @Autowired
     private XMLParsingService xmlParsingService;
 
+    @Autowired
+    private XMLBuildingService xmlBuildingService;
 
+    @RequestMapping(value="/download/{id}", method = RequestMethod.GET)
+    public void downloadFile(@PathVariable Long id, HttpServletResponse response) {
+        try {
+            xmlBuildingService.createXML(id, response.getOutputStream());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public @ResponseBody
     FileUploadInfo upload(MultipartHttpServletRequest request, HttpServletResponse response) {
 
