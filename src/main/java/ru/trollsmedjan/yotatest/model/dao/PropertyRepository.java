@@ -7,6 +7,7 @@ import ru.trollsmedjan.yotatest.model.entities.Document;
 import ru.trollsmedjan.yotatest.model.entities.Property;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by syachin on 21.05.2015.
@@ -14,7 +15,7 @@ import java.util.Collection;
 @Transactional
 public interface PropertyRepository extends CrudRepository<Property, Long> {
 
-    public Collection<Property> findByDocumentAndParentIdNot(Document document, Long parentId);
+    public List<Property> findByDocumentAndParentIdNot(Document document, Long parentId);
 
-    public Collection<Property> findByDocumentAndParentId(Document document, Long parentId);
+    public List<Property> findByDocumentAndParentId(Document document, Long parentId);
 }

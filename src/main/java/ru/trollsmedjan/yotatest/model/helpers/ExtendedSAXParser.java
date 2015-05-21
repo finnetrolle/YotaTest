@@ -1,7 +1,15 @@
 package ru.trollsmedjan.yotatest.model.helpers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.*;
+import ru.trollsmedjan.yotatest.model.dao.DocumentRepository;
+import ru.trollsmedjan.yotatest.model.dao.PropertyRepository;
+import ru.trollsmedjan.yotatest.model.entities.Document;
+import ru.trollsmedjan.yotatest.model.entities.Property;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -10,30 +18,60 @@ import org.xml.sax.*;
 
 public class ExtendedSAXParser extends DefaultHandler {
 
-    private String offset = "";
+    private Document document = null;
 
+    private Property currentProperty = null;
 
     @Override
     public void startDocument() throws SAXException {
-        offset = "D";
-        System.out.println(offset + " document started");
+        document = new Document();
+        currentProperty = null;
+        document.setName("some name here");
+        System.out.println(document);
     }
 
     @Override
     public void endDocument() throws SAXException {
-        offset = "D\\";
-        System.out.println(offset + " document ends");
+        document.setChilds(currentProperty.getChilds());
+        System.out.println(document);
     }
 
     @Override
     public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException {
-        offset += " ";
-        System.out.println(offset + " start element: " + qName);
+        Property property = new Property();
+        property.setDocument(document);
+        property.setName(atts.getValue("name"));
+        property.setParent(currentProperty);
+        currentProperty = property;
     }
 
     @Override
     public void endElement(String namespaceURI, String localName, String qName) throws SAXException {
-        System.out.println(offset + " end element: " + qName);
-        offset = offset.substring(0, offset.length()-1);
+        Property parent = currentProperty.getParent();
+        if (parent != null) {
+            parent.getChilds().add(currentProperty);
+            currentProperty = parent;
+        }
+    }
+
+    public Document getDocument() {
+        return document;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

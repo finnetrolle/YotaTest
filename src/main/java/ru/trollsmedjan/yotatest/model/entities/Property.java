@@ -26,6 +26,10 @@ public class Property {
     @ManyToOne
     private Document document;
 
+    @JsonIgnore
+    @Transient
+    private Property parent;
+
     @Transient
     private List<Property> childs = new ArrayList<>();
 
@@ -35,6 +39,17 @@ public class Property {
     //                          GENERATED CODE                               //
     ///////////////////////////////////////////////////////////////////////////
 
+
+    @Override
+    public String toString() {
+        return "Property{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", parentId=" + parentId +
+                ", document=" + document +
+                ", childs.size=" + childs.size() +
+                '}';
+    }
 
     public long getId() {
         return id;
@@ -74,5 +89,13 @@ public class Property {
 
     public void setChilds(List<Property> childs) {
         this.childs = childs;
+    }
+
+    public Property getParent() {
+        return parent;
+    }
+
+    public void setParent(Property parent) {
+        this.parent = parent;
     }
 }

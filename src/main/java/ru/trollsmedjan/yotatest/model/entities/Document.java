@@ -1,6 +1,7 @@
 package ru.trollsmedjan.yotatest.model.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public class Document {
     private String name;
 
     @Transient
-    private List<Property> childs;
+    private List<Property> childs = new ArrayList<>();
 
     @Override
     public String toString() {
