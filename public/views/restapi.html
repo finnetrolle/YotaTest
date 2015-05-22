@@ -1,0 +1,58 @@
+<div class="container">
+    Описание интерфейса
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">GET /document</h3>
+                </div>
+                <div class="panel-body">
+                    Запрос возвращает список хранящихся в системе документов без подгрузки их свойств
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">GET /document/{id}</h3>
+                </div>
+                <div class="panel-body">
+                    Запрос возвращает заполненный свойствами документ по идентификатору id
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">GET /download/{id}</h3>
+                </div>
+                <div class="panel-body">
+                    Запрос возвращает XML файл, представляющий документ с запрашиваемым id
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">POST /upload</h3>
+                </div>
+                <div class="panel-body">
+                    Запрос позволяет загрузить на сервер файл в формате XML, прочитать его и сохранить в БД
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

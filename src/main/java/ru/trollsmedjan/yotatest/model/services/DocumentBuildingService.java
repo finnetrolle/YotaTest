@@ -2,7 +2,6 @@ package ru.trollsmedjan.yotatest.model.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.trollsmedjan.yotatest.model.PropertyTreeBuilder;
 import ru.trollsmedjan.yotatest.model.dao.DocumentRepository;
 import ru.trollsmedjan.yotatest.model.dao.PropertyRepository;
 import ru.trollsmedjan.yotatest.model.entities.Document;

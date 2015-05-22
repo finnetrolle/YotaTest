@@ -1,4 +1,4 @@
-package ru.trollsmedjan.yotatest.model;
+package ru.trollsmedjan.yotatest.model.services;
 
 import org.springframework.stereotype.Service;
 import ru.trollsmedjan.yotatest.model.entities.Property;

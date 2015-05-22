@@ -8,7 +8,7 @@ import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import ru.trollsmedjan.yotatest.model.PropertyTreeBuilder;
+import ru.trollsmedjan.yotatest.model.services.PropertyTreeBuilder;
 import ru.trollsmedjan.yotatest.model.YotaTest;
 import ru.trollsmedjan.yotatest.model.entities.Document;
 import ru.trollsmedjan.yotatest.model.entities.Property;
@@ -110,6 +110,8 @@ public class PropertyTreeBuilderTest extends TestCase {
         childs.add(property);
 
         propertyTreeBuilder.fillRootsWithChilds(roots, childs);
+
+        assertEquals(roots.get(1).getChilds().get(0).getChilds().get(0).getChilds().get(1).getName(), "child 2-1-1-2");
 
     }
 }
