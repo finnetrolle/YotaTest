@@ -1,4 +1,4 @@
-package ru.trollsmedjan.yotatest.model.services;
+package ru.trollsmedjan.yotatest.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import ru.trollsmedjan.yotatest.model.dao.DocumentRepository;
 import ru.trollsmedjan.yotatest.model.dao.PropertyRepository;
 import ru.trollsmedjan.yotatest.model.entities.Document;
 import ru.trollsmedjan.yotatest.model.entities.Property;
-import ru.trollsmedjan.yotatest.model.helpers.ExtendedSAXParser;
+import ru.trollsmedjan.yotatest.helpers.ExtendedSAXParser;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -40,7 +40,9 @@ public class XMLParsingService {
 
         documentRepository.save(document);
 
-        document.getChilds().forEach(this::saveProperties);
+        for (Property child : document.getChilds()) {
+            saveProperties(child);
+        }
     }
 
     private void saveProperties(Property property) {

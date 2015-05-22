@@ -1,11 +1,11 @@
-package ru.trollsmedjan.yotatest.model.controllers;
+package ru.trollsmedjan.yotatest.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.xml.sax.SAXException;
-import ru.trollsmedjan.yotatest.model.services.XMLBuildingService;
-import ru.trollsmedjan.yotatest.model.services.XMLParsingService;
+import ru.trollsmedjan.yotatest.services.XMLBuildingService;
+import ru.trollsmedjan.yotatest.services.XMLParsingService;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;

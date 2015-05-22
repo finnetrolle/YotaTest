@@ -1,4 +1,4 @@
-package ru.trollsmedjan.yotatest.model.services;
+package ru.trollsmedjan.yotatest.services;
 
 import org.springframework.stereotype.Service;
 import ru.trollsmedjan.yotatest.model.entities.Property;
@@ -18,7 +18,7 @@ public class PropertyTreeBuilder {
         Map<Long, List<Property>> result = new HashMap<>();
         for (Property property : properties) {
             if (!result.containsKey(property.getParentId())) {
-                result.put(property.getParentId(), new ArrayList<>());
+                result.put(property.getParentId(), new ArrayList<Property>());
             }
             List<Property> list = result.get(property.getParentId());
             list.add(property);

@@ -1,4 +1,4 @@
-package ru.trollsmedjan.yotatest.model.services;
+package ru.trollsmedjan.yotatest.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

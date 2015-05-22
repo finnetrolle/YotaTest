@@ -1,15 +1,15 @@
-package ru.trollsmedjan.yotatest.model.controllers;
+package ru.trollsmedjan.yotatest.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.trollsmedjan.yotatest.model.services.PropertyTreeBuilder;
+import ru.trollsmedjan.yotatest.services.PropertyTreeBuilder;
 import ru.trollsmedjan.yotatest.model.dao.DocumentRepository;
 import ru.trollsmedjan.yotatest.model.dao.PropertyRepository;
 import ru.trollsmedjan.yotatest.model.entities.Document;
-import ru.trollsmedjan.yotatest.model.services.DocumentBuildingService;
+import ru.trollsmedjan.yotatest.services.DocumentBuildingService;
 
 /**
  * Created by finnetrolle on 21.05.2015.

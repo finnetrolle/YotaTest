@@ -1,4 +1,4 @@
-package ru.trollsmedjan.yotatest.model.helpers;
+package ru.trollsmedjan.yotatest.helpers;
 
 import org.xml.sax.helpers.DefaultHandler;
 import org.xml.sax.*;

@@ -6,7 +6,8 @@
 
     <groupId>ru.trollsmedjan</groupId>
     <artifactId>yotatest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
+    <packaging>war</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,12 +25,19 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -42,8 +50,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <start-class>ru.trollsmedjan.muninn.Muninn</start-class>
-        <java.version>1.8</java.version>
+        <start-class>ru.trollsmedjan.yotatest.YotaTest</start-class>
+        <java.version>1.7</java.version>
     </properties>
 
 
@@ -54,6 +62,11 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>public</directory>
+            </resource>
+        </resources>
     </build>
 
     <repositories>
@@ -68,6 +81,9 @@
             <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
+
+
+
 
 
 </project>

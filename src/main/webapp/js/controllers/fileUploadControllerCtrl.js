@@ -1,11 +1,14 @@
 
 yotaTestApp.controller('fileUploadController', ['$scope', '$http', '$location', function($scope, $http, $location){
 
+    var path = $location.absUrl();
+    path = path.substring(0, path.indexOf("#"));
+
     $scope.uploadFile = function(files) {
         var formData = new FormData();
         formData.append("file", files[0]);
 
-        $http.post('/upload', formData, {
+        $http.post(path + 'upload', formData, {
             withCredentials: true,
             headers: {
                 "Content-Type": undefined
