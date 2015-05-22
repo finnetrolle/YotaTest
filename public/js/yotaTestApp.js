@@ -15,8 +15,12 @@ yotaTestApp.config(function ($routeProvider) {
             controller: 'fileUploadController'
         })
         .when('/document/:id', {
-            templateUrl: 'views/document.html',
+            templateUrl: 'views/Document.html',
             controller: 'documentController'
+        })
+        .when('/restapi', {
+            templateUrl: 'views/restapi.html',
+            controller: 'restApiController'
         })
         .otherwise('/');
 

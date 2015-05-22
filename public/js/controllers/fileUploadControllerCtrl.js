@@ -12,10 +12,8 @@ yotaTestApp.controller('fileUploadController', ['$scope', '$http', '$location', 
             },
             transformRequest: angular.identity
         }).success(function(data){
-            alert("success");
             $location.path("/");
         }).error(function(data){
-            alert("failure");
             $location.path("/");
         });
     };

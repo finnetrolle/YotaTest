@@ -11,17 +11,29 @@
     <script src="js/controllers/fileUploadControllerCtrl.js"></script>
     <script src="js/controllers/documentController.js"></script>
     <script src="js/controllers/homeController.js"></script>
+    <script src="js/controllers/restApiController.js"></script>
 
     <link rel="stylesheet" href="css/angular.treeview.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
 </head>
 
 <body ng-app="yotaTestApp">
 
-<ul>
-    <li><a href="#/upload">Upload</a></li>
-    <li><a href="#/">Home</a></li>
-</ul>
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/">Yota Test</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#/upload"><i class="fa fa-home"></i>Upload XML</a></li>
+                <li><a href="#/restapi"><i class="fa fa-home"></i>REST API</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
 <div ng-view></div>
 
