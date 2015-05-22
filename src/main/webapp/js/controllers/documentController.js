@@ -11,6 +11,7 @@ yotaTestApp.controller('documentController', ['$scope', '$http', '$routeParams',
 
     var path = $location.absUrl();
     path = path.substring(0, path.indexOf("#"));
+    $scope.path = path;
 
     $http.get(path + 'document/' + $scope.id)
         .success(function(data){
@@ -18,5 +19,9 @@ yotaTestApp.controller('documentController', ['$scope', '$http', '$routeParams',
         }).error(function(data){
             $scope.document = null;
         });
+
+    $scope.download = function() {
+        $http.get(path + 'download/' + $scope.id);
+    }
 
 }]);

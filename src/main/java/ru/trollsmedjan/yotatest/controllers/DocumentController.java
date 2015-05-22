@@ -22,12 +22,6 @@ public class DocumentController {
     private DocumentRepository documentRepository;
 
     @Autowired
-    private PropertyRepository propertyRepository;
-
-    @Autowired
-    private PropertyTreeBuilder propertyTreeBuilder;
-
-    @Autowired
     private DocumentBuildingService documentBuildingService;
 
     @RequestMapping
