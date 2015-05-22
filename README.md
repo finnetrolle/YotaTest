@@ -11,6 +11,10 @@ https://bitbucket.org/finnetrolle/yotatest/wiki/FAQ
 ## XML файлы для тестирования ##
 Можно скачать тут https://bitbucket.org/finnetrolle/yotatest/downloads
 
+## Демо ##
+Демо доступно по адресу http://trollsmedjan.ru:8080/yotatest-1.0/#/
+*(ВНИМАНИЕ! Сервер слабый, на нем крутится еще куча всего, так что он может внезапно уйти в отключку)*
+
 ## Установка и запуск ##
 
 1) Клонировать репозиторий
