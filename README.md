@@ -8,6 +8,9 @@
 ## Список вопросов ##
 https://bitbucket.org/finnetrolle/yotatest/wiki/FAQ
 
+## XML файлы для тестирования ##
+Можно скачать тут https://bitbucket.org/finnetrolle/yotatest/downloads
+
 ## Установка и запуск ##
 
 1) Клонировать репозиторий
